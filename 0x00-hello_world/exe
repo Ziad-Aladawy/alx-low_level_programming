@@ -1,0 +1,5 @@
+#!/bin/bash
+read filename
+touch "$filename"
+echo "#!/bin/bash" > "$filename"
+vim "$filename"
