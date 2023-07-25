@@ -1,0 +1,6 @@
+#!/bin/bash
+git chmod u+x *
+git chmod u-x README.md
+git add .
+git commit -m "auto"
+git push origin main
