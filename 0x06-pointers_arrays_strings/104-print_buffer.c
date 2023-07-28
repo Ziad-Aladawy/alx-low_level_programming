@@ -1,69 +1,34 @@
 #include "main.h"
-#include <string.h>
-#include <stdlib.h>
 
 /**
- * reverse - reverses a string
- * @s: string to reverse
- * Return: pointer to the reversed string
+* print_buffer - prints a buffer
+ * @b: the address of the memory to print
+ * @size: the size of the memory to print
  */
-char *reverse(char *s)
+void print_buffer(char *b, int size)
 {
-	size_t len = strlen(s);
-	size_t i;
+	int offset, byte_index, char_index;
 
-	for (i = 0; i < len / 2; i++)
+	for (offset = 0; offset < size; offset += 10)
 	{
-		char temp = s[i];
+		/* print offset */
+		printf("%08x: ", offset);
 
-		s[i] = s[len - 1 - i];
-		s[len - 1 - i] = temp;
-	}
-	return (s);
-}
+		/* print bytes in hex */
+		for (byte_index = 0; byte_index < 10; byte_index++)
+		{
+			(offset + byte_index < size) ? printf("%02x", b[offset + byte_index])
+				: printf("  ");
+			(byte_index % 2) ? printf(" ") : 0;
+		}
 
-/**
- * infinite_add - adds two numbers
- * @n1: The first positive number
- * @n2: The second positive number
- * @r: The buffer that the function will use to store the result
- * @size_r: The buffer size
- * Return: A pointer to the result
- */
-char *infinite_add(char *n1, char *n2, char *r, int size_r)
-{
-	int len1 = strlen(n1);
-	int len2 = strlen(n2);
+		/* print bytes in ascii */
+		for (char_index = 0; char_index < 10; char_index++)
+			(offset + char_index < size) ? printf("%c", (b[offset + char_index] >= 32 &&
+				b[offset + char_index] <= 126) ? b[offset + char_index] : '.') : 0;
 
-	char *temp = malloc(sizeof(char) * (len1 + len2 + 1));
-	int i, j, k, sum, carry = 0;
-
-	/* Perform addition */
-	for (i = len1 - 1, j = len2 - 1, k = 0;
-		i >= 0 || j >= 0 || carry;
-		i--, j--, k++)
-	{
-		sum = carry;
-		sum += (i >= 0) ? n1[i] - '0' : 0;
-		sum += (j >= 0) ? n2[j] - '0' : 0;
-		temp[k] = sum % 10 + '0';
-		carry = sum / 10;
+		printf("\n");
 	}
 
-	/* if the result is empty, return 0 */
-	if (k == 0)
-		return (0);
-
-	/* null terminate the result */
-	temp[k] = '\0';
-
-	/* if the result is too big, return 0 */
-	if ((int)strlen(temp) + 1 > size_r)
-		return (0);
-
-	r = strcpy(r, temp);
-	free(temp);
-
-	/* return the reversed result */
-	return (reverse(r));
+	(size <= 0) ? printf("\n") : 0;
 }
