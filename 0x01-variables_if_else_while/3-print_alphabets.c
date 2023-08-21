@@ -1,26 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 /**
- * main - Entry point
- *
- * Description: print all aplhabet letters
- *
- * Return: Always 0 (Success)
-*/
+ * main - 
+ * Return: 
+ */
+
 int main(void)
 {
-	int n = 97;
-	int m = 65;
-
-	while (n <= 122)
+	int i;
+	for (i = 65; i < 91; i++)
 	{
-		putchar(n);
-		n++;
+		if (i == 91)
+		{
+			putchar(10);
+			return (0);
+		}
+		putchar(i);
 	}
-	while (m <= 90)
-	{
-		putchar(m);
-		m++;
-	}
-	putchar('\n');
 	return (0);
 }
