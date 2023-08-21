@@ -2,13 +2,14 @@
 #include <stdlib.h>
 
 /**
- * main - 
- * Return: 
+ * main - prints the alphabet UPPER
+ * Return: always returns 0 - success
  */
 
 int main(void)
 {
 	int i;
+
 	for (i = 65; i < 91; i++)
 	{
 		if (i == 91)
