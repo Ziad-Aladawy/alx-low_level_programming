@@ -1,11 +1,13 @@
 #include <stdio.h>
-#include <unistd.h>
+#include <stdlib.h>
+
 /**
- * main - Entry point
- * Return:1
+ * main - prints a string to the stderr
+ * Return: always returns 0 - success
  */
+
 int main(void)
 {
-fputs("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", stdout);
-return (1);
+	printf("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
+	return (1);
 }
