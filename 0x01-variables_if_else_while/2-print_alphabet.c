@@ -12,7 +12,7 @@ int main(void)
 	{
 		if(i == 123)
 		{
-			putchar(32);
+			putchar(10);
 			return (0);
 		}
 		putchar(i);
