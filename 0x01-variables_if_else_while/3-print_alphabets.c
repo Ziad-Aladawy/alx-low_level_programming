@@ -10,7 +10,8 @@ int main(void)
 {
 	int i;
 
-	for (i = 65; i < 91; i++)
+
+	for (i = 97; i < 123; i++)
 	{
 		if (i == 91)
 		{
@@ -18,6 +19,10 @@ int main(void)
 			return (0);
 		}
 		putchar(i);
+		if (i == 122)
+		{
+			i -= 58;
+		}
 	}
 	return (0);
 }
