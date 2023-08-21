@@ -15,6 +15,9 @@ int main(void)
 		if (ch == 'e' || ch == 'q')
 			ch++;
 		putchar(ch);
+		if (ch == 'z')
+			break;
 	}
+	putchar(10);
 	return (0);
 }
