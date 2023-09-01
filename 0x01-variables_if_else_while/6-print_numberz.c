@@ -11,15 +11,12 @@
 
 int main(void)
 {
-	int digit = 0;
+	int i;
 
-	while (digit <= 9)
+	for(i = '0'; i <= '9'; i++)
 	{
-		/*convert digit to ASCII representation*/
-		putchar(digit + '0');
-		++digit;
+		putchar(i);
+		putchar('\n');
 	}
-	putchar('\n');
-
 	return (0);
 }
