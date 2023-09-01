@@ -10,21 +10,18 @@
 
 int main(void)
 {
-	int digit = 0;
-
-	while (digit <= 9)
-	{
-		putchar(digit + 48);
-
-		if (digit != 9)
-		{
-			putchar(',');
-			putchar(' ');
-		}
-
-		++digit;
-	}
-	putchar('\n');
-
-	return (0);
+	int i;
+	
+    for (i = '0'; i <= '9'; i++)
+    {
+        putchar(i);
+        if (i == '9')
+        {
+            putchar('\n');
+            return (0);
+        }
+        putchar(',');
+        putchar(' ');
+    }
+    return (0);
 }
