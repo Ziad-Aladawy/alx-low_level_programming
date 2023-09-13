@@ -12,11 +12,15 @@ void print_alphabet_x10(void)
 		for (ch = 'a'; ch <= 'z'; ch++)
 		{
 			_putchar(ch);
-			if (ch == 'z' && cnt <= 10)
+			if (ch == 'z')
 			{
 				_putchar('\n');
 				cnt++;
+			}
+			if (cnt < 10)
+			{
 				ch = 96;
 			}
+
 		}
 }
