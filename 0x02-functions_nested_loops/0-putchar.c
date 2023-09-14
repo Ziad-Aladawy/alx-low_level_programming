@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <limits.h>
 /**
 * main - Entry Point
 * Description: prints "_putchar"
@@ -15,7 +15,6 @@ int main(void)
 		string++;
 	}
 	_putchar('\n');
-
 
 	return (0);
 }
