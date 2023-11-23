@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "100.h"
 void combo2(void);
 /**
  * main - prints all possible combinations of 2 digits
@@ -11,21 +12,9 @@ int main(void)
 	combo2();
 	return (0);
 }
-/**
- * struct max - Short description
- * @maxi: First member
- * @maxj: Second member
- *
- * Description: Longer description
- */
-struct max
-{
-	int maxi, maxj;
-};
+
 /**
  * maxCombo - get the largest combination possible
- * @maxi: maximum i
- * @maxj: maximum j
  * Return: the max number
 */
 struct max maxCombo(void)
