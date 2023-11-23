@@ -2,7 +2,7 @@
 #define HEADER
 
 int _putchar(char);
-unsigned int binToDec(const char *);
+unsigned int binary_to_uint(const char *b);
 
 
 #endif

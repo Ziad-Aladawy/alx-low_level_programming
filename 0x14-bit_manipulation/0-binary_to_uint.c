@@ -2,11 +2,11 @@
 #include "main.h"
 
 /**
-* binToDec - converts binary string to a decimal number
+* binary_to_uint - converts binary string to a decimal number
 * @b: the binary string
 * Return: returns the number unless it's NULL or not 0s and 1s
 */
-unsigned int binToDec(const char *b)
+unsigned int binary_to_uint(const char *b)
 {
 	unsigned int res = 0, i;
 
