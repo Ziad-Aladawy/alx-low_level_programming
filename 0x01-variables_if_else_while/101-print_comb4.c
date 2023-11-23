@@ -1,49 +1,71 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "100.h"
 
 /**
- * main - Entry point
- *
- * Description: print all possible different
- *            combinations of two digits.
- *
- * Return: Always 0 (Success)
+* maxCombo3 - so yea same thing here
+* Return: the struct of max numbers
 */
-
-int main(void)
+struct max maxCombo3(void)
 {
-	int digit1 = 0;
-	int digit2, digit3;
+	int i, j, k;
 
-	while (digit1 <= 9)
+	struct max combo3;
+
+	for (i = '0'; i <= '9'; i++)
 	{
-		digit2 = 0;
-		while (digit2 <= 9)
+		for (j = i + 1; j <= '9'; j++)
 		{
-			digit3 = 0;
-			while (digit3 <= 9)
+			for (k = j + 1; k <= '9'; k++)
 			{
-				if (digit1 != digit2 &&
-				    digit1 < digit2 &&
-				    digit2 != digit3 &&
-				    digit2 < digit3)
-				{
-					putchar(digit1 + 48);
-					putchar(digit2 + 48);
-					putchar(digit3 + 48);
-
-					if (digit1 + digit2 + digit3 != 24)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-				}
-				++digit3;
+				combo3.maxi = i;
+				combo3.maxj = j;
+				combo3.maxk = k;
 			}
-			++digit2;
 		}
-		++digit1;
+	}
+
+	return (combo3);
+}
+
+/**
+* combo3 - unique combinations of 3 digits
+* Return: Void
+*/
+void combo3(void)
+{
+	int i, j, k;
+
+	struct max res = maxCombo3();
+
+	for (i = '0'; i <= '9'; i++)
+	{
+		for (j = i + 1; j <= '9'; j++)
+		{
+			for (k = j + 1; k <= '9'; k++)
+			{
+				putchar(i);
+				putchar(j);
+				putchar(k);
+				if (i == res.maxi && j == res.maxj && k == res.maxk)
+				{
+					continue;
+				}
+				putchar(',');
+				putchar(' ');
+			}
+		}
 	}
 	putchar('\n');
+}
+
+/**
+* main - Entry point
+* Return: zero on success
+*/
+int main(void)
+{
+	combo3();
 
 	return (0);
 }

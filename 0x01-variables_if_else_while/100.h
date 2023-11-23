@@ -10,7 +10,7 @@
 */
 struct max
 {
-	int maxi, maxj;
+	int maxi, maxj, maxk;
 
 };
 #endif
