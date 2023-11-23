@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-
+void putAlpha(void);
 /**
  * main - prints the alphabet
  * Return: always returns 0 - success
