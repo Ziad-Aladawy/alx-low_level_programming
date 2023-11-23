@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 void combo2(void);
-typedef struct max Struct;
 /**
  * main - prints all possible combinations of 2 digits
  * Return: always returns 0 - success
@@ -29,9 +28,9 @@ struct max
  * @maxj: maximum j
  * Return: the max number
 */
-Struct maxCombo(void)
+struct max maxCombo(void)
 {
-	Struct max;
+	struct max max;
 	int i, j;
 
 	for (i = '0'; i <= '9'; i++)
@@ -52,7 +51,7 @@ Struct maxCombo(void)
 void combo2(void)
 {
 	int i, j;
-	Struct res = maxCombo();
+	struct max res = maxCombo();
 
 	for (i = '0'; i <= '9'; i++)
 	{
