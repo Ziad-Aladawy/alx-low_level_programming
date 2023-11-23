@@ -6,7 +6,7 @@
 * @bin: the binary string
 * Return: returns the number unless it's NULL or not 0s and 1s
 */
-unsigned int binToDec(char *bin)
+unsigned int binToDec(const char *bin)
 {
 	int res = 0, i;
 
