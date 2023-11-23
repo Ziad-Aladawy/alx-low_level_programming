@@ -13,7 +13,7 @@ unsigned int binToDec(char *bin)
 	if (!bin)
 		return (0);
 
-	for (i = sizeof(bin) - 1; i >= 0; i--)
+	for (i = 0; i >= sizeof(bin); i--)
 	{
 		/* 1 0 1 */
 		res <<= 1;
