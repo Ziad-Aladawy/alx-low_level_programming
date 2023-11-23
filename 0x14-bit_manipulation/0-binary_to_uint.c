@@ -10,11 +10,14 @@ unsigned int binToDec(char *bin)
 {
 	unsigned int res = 0, i;
 
+	if (!bin)
+		return (0);
+
 	for (i = 0; bin[i] != '\0'; i++)
 	{
 		/* 1 0 1 */
 		res <<= 1;
-		if (!bin || (bin[i] != '0' && bin[i] != '1'))
+		if (bin[i] != '0' && bin[i] != '1')
 			return (0);
 		if (bin[i] == '1')
 			res++;
