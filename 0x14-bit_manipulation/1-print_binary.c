@@ -1,34 +1,51 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * _length - get the length of bit of the number
- * @n: the number
+ * _length - find the length of @n
+ *
+ * @n: value to find its length
+ *
  * Return: length
 */
 int _length(unsigned long int n)
 {
-	int l = 0;
+	int length = 0;
 
-	while (n > 1)
+	while (n > 0)
 	{
-		l++;
-		n >>= 1;
+		length++;
+		n >>= 1; /*shift n to the right by 1*/
 	}
-	return (l);
+
+	length--;
+
+	return (length);
 }
 
 /**
-* print_binary - prints binary from decimal
-* @n: number to be converted
-* Return: nothing
+ * print_binary - a function that converts a decimal to binary
+ *
+ * @n: decimal number to convert
+ *
+ * Return: nothing
 */
 void print_binary(unsigned long int n)
 {
-	unsigned long long i;
+	int length;
+	unsigned long int mask = 1;
 
-	for (i = 1 << _length(n); i > 0; i >>= 1)
+	length = _length(n);
+
+	if (length > 0) /*create mask based on length of number*/
+		mask <<= length; /*shift mask to the left by length*/
+
+	while (mask > 0)
 	{
-		(n & i) ? _putchar('1') : _putchar('0');
+		if (n & mask) /*if n & mask == 1 print 1*/
+			_putchar('1');
+		else /*else if n & mask == 0 print 0*/
+			_putchar('0');
+
+		mask >>= 1; /*shift mask to the right by 1*/
 	}
 }
