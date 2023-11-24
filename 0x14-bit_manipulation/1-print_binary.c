@@ -10,7 +10,7 @@ int length(unsigned long int n)
 {
 	int l = 0;
 
-	while (n > 0)
+	while (n > 1)
 	{
 		l++;
 		n >>= 1;
