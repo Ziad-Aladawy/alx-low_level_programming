@@ -2,11 +2,11 @@
 #include "main.h"
 
 /**
- * length - get the length of bit of the number
+ * _length - get the length of bit of the number
  * @n: the number
  * Return: length
 */
-int length(unsigned long int n)
+int _length(unsigned long int n)
 {
 	int l = 0;
 
@@ -27,11 +27,8 @@ void print_binary(unsigned long int n)
 {
 	unsigned long long i;
 
-	for (i = 1 << length(n); i > 0; i >>= 1)
+	for (i = 1 << _length(n); i > 0; i >>= 1)
 	{
-		if (n & i)
-			_putchar('1');
-		else
-			_putchar('0');
+		(n & i) ? _putchar('1') : _putchar('0');
 	}
 }
